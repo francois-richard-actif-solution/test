@@ -1,0 +1,42 @@
+# Installer Ubuntu :
+Vérifier que l’ordinateur acheter est dans cette [liste](https://doc.ubuntu-fr.org/liste_portables_asus).
+Télécharger la version d’Ubuntu correspondant (fichier.iso).
+Si l’installation se fait via clé USB :
+> Formater la clef USB en « FAT32 ».
+> Télécharger « Universal Usb Installer » et transformer le fichier.iso en installateur sur la clé. 
+Suivre l’installation d’Ubuntu.
+
+Problème pouvant arriver avec l’installation Ubuntu :
+manager for UID 121 : le driver de la carte graphique n’est pas à jour. Peut être contourner en écrivant « apci=off » dans le grub à la fin de la ligne commençant par « linux ».
+Écran noir ou freeze au démarrage : carte graphique pas compatible. La désactiver en écrivant « nomodeset » ou bien « nouveau,modeset=0 » dans le grub à la fin de la ligne commençant par « linux ».*
+## Astuce ubuntu :
++ pour accéder au grub : l’acces au grub est automatique si il y a plusieur option de démarage (notamment sur un clef USB). Sinon, appuyer sur Shift au démarrage, si cela ne fonctionne pas, appuyer sur échappe APRÈS être sorti du bios. 
++ La commande « uname -r » donne la version actuelle du kernel.
++ La commande « ubuntu-drivers devices » donne la version de la carte graphique.
+
+# Installation des programme sur l’ordinateur :
+Toute l’installation peut ce faire dans un terminal.
+## création d’un dossier projet :
+Créer le dossier projet :
+'''mkdir Projet
+cd Projet/'''
+## installer git :
+Installer git et importer les projets :
+'''sudo apt-get install git
+git status
+git clone https://github.com/xtuc/escale-app.git
+git clone https://github.com/xtuc/rh-escale.com.git
+git clone https://github.com/xtuc/escale-admin.git'''
+## Installer curl :
+'''sudo apt install curl'''
+## installer pip et ansible :
+'''sudo apt install python-pip'''
+Si pip fait cette erreur : AttributeError: 'module' object has no attribute 'SSL_ST_INIT' 
+alors faire :
+'''sudo python -m easy_install --upgrade pyOpenSSL
+sudo pip install --upgrade pip 
+sudo pip install --upgrade virtualenv'''
+'''~~sudo pip install ansible===2.4.1.0~~'''
+## installer npm et composer :
+
+
